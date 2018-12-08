@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/12/2018, 14:02:43
+    Author     : Ig0r
+*/
+.login-cadastro{
+    width: 100%;
+    border: 1px solid activeborder;
+}
+.login-cadastro div{
+    display:block;
+    margin-left: 60%    
+}
+nav div {
+    display: block;
+    height: 35px;
+    text-align: center;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 15px 12px;    
+}
+
+ul li a:hover{
+    background: lightgreen;    
+}
+.usuario{ 
+    border: 1px solid activeborder;
+    margin-top: 0px;
+    position: relative;
+    height: 50px;
+    background: lightblue;
+}
+.usuario p {
+    text-align: left;    
+    position: absolute;
+}
+.biblioteca{
+    border: 1px solid activeborder;
+    background: lightblue;
+    height: 50px;
+}
+.biblioteca p{
+    text-align: left;    
+    position: absolute;
+}
