@@ -40,6 +40,7 @@
             %>
             </select><br><br>            
             <input type="submit" name="btn_salvar" value="Salvar" />
+            <a style="text-decoration: none; padding: 5px 13px; background: lightgreen" href="index.jsp">VOLTAR AO MENU</a>
         </form> 
         <%        
         if(conecxao != null){
@@ -49,8 +50,8 @@
             Statement st;
             String sql = "INSERT INTO livros(nome,tipo_livro)VALUES('"+nome+"','"+tipo+"')";
             st = conecxao.createStatement();
-            st.executeUpdate(sql);             
-            response.sendRedirect("index.html");          
+            st.executeUpdate(sql);
+            out.print("dados salvo com sucesso");
             }else{
                 out.print("todos os campos deve ser preenchido");
             }            

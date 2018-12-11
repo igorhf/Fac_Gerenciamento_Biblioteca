@@ -1,0 +1,46 @@
+BANCO MYSQL
+
+1º PASSO
+
+create database db_biblioteca;      
+
+
+2º PASSO
+
+create table usuario(
+id int primary key auto_increment,
+nome varchar(150),
+cpf varchar(18)
+);
+create table tipo(
+id int primary key auto_increment,
+nome varchar(200)
+);
+create table livros(
+id int primary key auto_increment,
+nome varchar(200),
+tipo_livro varchar(200)
+);
+create table associacao(
+id int primary key auto_increment,
+idUsuario int,
+idLivros int,
+foreign key(idUsuario)references usuario(id),
+foreign key(idLivros)references livros(id)
+);
+
+3º PASSO
+
+insert into tipo(nome)values('acao');
+
+insert into tipo(nome)values('comedia');
+
+insert into tipo(nome)values('ficcao');
+
+insert into tipo(nome)values('romance');
+
+insert into tipo(nome)values('terro');
+
+insert into tipo(nome)values('administracao');
+
+insert into tipo(nome)values('programacao');

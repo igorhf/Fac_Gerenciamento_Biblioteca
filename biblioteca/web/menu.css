@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 05/12/2018, 14:02:43
     Author     : Ig0r
 */
+.use:first-child{
+    background:lightgreen
+}
 .login-cadastro{
     width: 100%;
     border: 1px solid activeborder;

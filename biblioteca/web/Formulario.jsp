@@ -26,6 +26,7 @@
             <label>NOME: </label><input type="text" name="nome" required><br><br>
             <label>SENHA: </label><input type="text" name="cpf" required><br><br>
             <input type="submit" name="btn_salvar" value="Salvar" />
+            <a style="text-decoration: none; padding: 5px 12px; background: lightgreen" href="index.jsp">VOLTAR AO MENU</a>
         </form> 
         <%        
         if(conecxao != null){
@@ -36,7 +37,7 @@
             String sql = "INSERT INTO usuario(nome,cpf)VALUES('"+nome+"','"+cpf+"')";
             st = conecxao.createStatement();
             st.executeUpdate(sql);             
-            response.sendRedirect("index.html");          
+            out.print("dados salvo com sucesso");
             }else{
                 out.print("todos os campos deve ser preenchido");
             }            
