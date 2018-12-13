@@ -26,16 +26,20 @@
             <label>TIPO:</label>
             <select name="tipo_livro">
             <%
-            Statement stm;
-            stm = conecxao.createStatement();
-            String select = "SELECT * FROM tipo";            
-            ResultSet rs;
-            rs = stm.executeQuery(select);
-            while(rs.next()){
-            String tipo = rs.getString("nome");
-            %>
-            <option><%=tipo%></option>
-            <%            
+            if(conecxao != null){    
+                Statement stm;
+                stm = conecxao.createStatement();
+                String select = "SELECT * FROM tipo";            
+                ResultSet rs;
+                rs = stm.executeQuery(select);
+                while(rs.next()){
+                String tipo = rs.getString("nome");
+                %>
+                <option><%=tipo%></option>
+                <%            
+                }
+            }else{
+                out.print("sistema não conectado");
             }
             %>
             </select><br><br>            

@@ -94,7 +94,23 @@
         </nav>
         <%
         }        
-        %>
+        %>        
+        <h1 style="text-align: center;color:  lightseagreen">GERENCIAMENTO DE BIBLIOTECA</h1>
+        
+            <%
+            Conecta_Banco conn = new Conecta_Banco();
+            Connection conecxao = conn.conectaMysql("db_biblioteca");
+            if(conecxao != null){
+                %>
+                <p style="color: green"><%out.print("BANCO DE DADOS CONECTADO");%></p>
+                <%
+            }else{
+                %>
+                <p style="color: red"><%out.print("BANCO DE DADOS DESCONECTADO");%></p>
+                <%
+            }
+            %>
+        
     </body>
 </html>
 
