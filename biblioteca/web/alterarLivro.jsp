@@ -19,7 +19,6 @@
         <%
             Conecta_Banco conn = new Conecta_Banco();
             Connection conecxao = conn.conectaMysql("db_biblioteca");
-        if(session.getAttribute("id") !=null){
             if(conecxao != null){
                 %>
                     <h2>ALTERAR LIVRO</h2>
@@ -60,6 +59,7 @@
                         String tipo = rss.getString("tipo_livro");
                         %>
                         <p><b>ID:</b> <%out.print(id);%>, <b>NOME:</b> <%out.print(nome);%>, <b>CATEGORIA:</b> <%out.print(tipo);%></p>  
+                        <hr>
                         <%            
                         }
                         rss.close();
@@ -74,20 +74,19 @@
                         Statement st;
                         String sql = "UPDATE livros set nome='"+nome+"',tipo_livro='"+tipo+"' where id="+id+"";
                         st = conecxao.createStatement();
-                        st.executeUpdate(sql);                                    
+                        st.executeUpdate(sql);
+                        response.sendRedirect("alterarLivro.jsp");
                 }else{
                     out.print("todos os campos deve ser preenchido");
                 }
             }            
             }else{
-            out.print("sistema não conectado");
-            }      
-        }else{
-            out.print("<h1>VOCÊ PRECISA ESTÁ LOGADO PARA REALIZAR AS ALTERAÇÕES</h1>");
+            out.print("<h1>BANCO DE DADOS DESCONECTADO</h1>");
             %>
             <a style="text-decoration: none; padding: 5px 13px; background: lightgreen" href="index.jsp">VOLTAR AO MENU</a>        
             <%
-        }    
+            }      
+            
         %>
     </body>
 </html>

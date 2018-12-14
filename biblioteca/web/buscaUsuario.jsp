@@ -43,6 +43,7 @@
             String cpf = rs.getString("cpf");
             %>
             <p>ID: <%out.print(id);%>, NOME: <%out.print(nome);%>, CPF: <%out.print(cpf);%></p>                
+            <hr>
             <%
                 }
             rs.close();
